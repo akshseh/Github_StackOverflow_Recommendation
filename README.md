@@ -2,7 +2,7 @@
 
 ##                       Github Features
 
-### |   For User              		|	For Repo (Organisation)     |    
+|   For User              		|	For Repo (Organisation)     |    
 | --------------------------------------|--------------------------------   |
 |- Languages he worked in		|	- Languages used            |
 |- Followers				|	- Followers                 |
