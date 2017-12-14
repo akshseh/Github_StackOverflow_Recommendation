@@ -25,7 +25,7 @@ config.readfp(open(settings_file))
 
 #Funtion to write output 
 def write_to_out_file(out_data):
-	with open('../../Dataset/repo_user.json','a') as file_out:
+	with open(output_file,'a') as file_out:
 		json.dump(out_data,file_out)
 		file_out.write('\n')
 
