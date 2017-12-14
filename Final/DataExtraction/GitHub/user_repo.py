@@ -9,7 +9,7 @@ if len(sys.argv) < 4:
     print """
         Command : python user_repo.py <input-file : links of repository> <output-file> <settings-file>
         (IN OUR CASE)
-        python user_repo.py ../../Dataset/githubID-stackID.csv ../../Dataset/repo_user.csv ../settings.txt
+        python user_repo.py ../../Dataset/githubID-stackID.csv ../../Dataset/repo_user.json ../settings.txt
     """
     sys.exit(1)
 
