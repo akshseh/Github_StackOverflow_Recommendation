@@ -2,12 +2,12 @@
 
 ##                       Github Features
 
-|   For User              		|	For Repo (Organisation)     |    
-| --------------------------------------|--------------------------------   |
-|- Languages he worked in		|	- Languages used            |
-|- Followers				|	- Followers                 |
-|					|	- Watching/Starred Users    |
-						
+|   For User              			|	For Repo (Organisation)     |    
+| ----------------------------------------------|--------------------------------   |
+|- Languages he worked in			|	- Languages used            |
+|- Followers					|	- Followers                 |
+|- Repos Contributed to				|	- Watching/Starred Users    |
+					
 
 ## StackOverflow Features :
 - Reputation 
