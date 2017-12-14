@@ -59,3 +59,4 @@ with open('common_users.csv', 'rb') as file_input:
 #	if(r.ok):
  #   	repoItem = json.loads(r.text or r.content)
   #  	print "Django repository created: " + repoItem['created_at']
+
