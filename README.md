@@ -10,8 +10,8 @@
 					
 
 ## StackOverflow Features :
-- Reputation 
-- Score (Upvotes - Downvotes)
-- Tags
-- Badges
+- Reputation (MAIN FEATURE )
+- Score      (Upvotes - Downvotes)
+- Tags       (languages he works in)
+- Badges     (Bronze:1 - Silver:2 - Gold:3)
 
