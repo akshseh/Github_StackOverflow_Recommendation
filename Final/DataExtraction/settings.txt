@@ -1,5 +1,5 @@
 [GitHub API keys]
-github_client_id = "9ea814cd8cecb7ac9718"
+github_client_id = 9ea814cd8cecb7ac9718
 github_client_secret=78922592039789584326bf68c9fbe0299a1ea857
 
 [StackOverflow API keys]
