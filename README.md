@@ -20,9 +20,9 @@
 
 Relationship between languages in repo - languages used by Repo followers - languages used by the user followers.
 
-% of starred users contributing to the repo. 
+- The graph shows the relationship between the languages in the repositories and the languages used by the recommended users. 
+or % similarity between user languages and repo languages.
 
-User language tags - languages he works in in github.
+- User language tags - languages he works in in github.
 
-
-
+- Badges + score - repos user contributed to
