@@ -29,12 +29,18 @@ def write_to_out_file(out_data):
 
 
 #Function to extract of Git-Hub user-ID
-def extract_user_info(user_link):
+def extract_user_info(user_link,userID_inp):
 	user_data = requests.get(user_link+'?client_id='+config.get('GitHub API keys', 'github_client_id')+'&client_secret=' + config.get('GitHub API keys', 'github_client_secret') +'&')
 	#if(user_data.ok): Is this needed
 	user_data_json = json.loads(user_data.text or user_data.content)
 	username = user_data_json['login']
-	write_to_out_file(username)
+	userID_username = {
+		 	'userID' : [],
+		 	'username' : []
+		}
+	userID_username['userID'].append(userID_inp)
+	userID_username['username'].append(username)
+	write_to_out_file(userID_username)
 
 #Function to read input file
 with open(input_file, 'rb') as file_input:
@@ -42,5 +48,5 @@ with open(input_file, 'rb') as file_input:
 	file_read = csv.reader(file_input)
 	for row in file_read:
 		user_link_search = 'https://api.github.com/user/'+row[0].split(";")[0]
-		extract_user_info(user_link_search)
+		extract_user_info(user_link_search,row[0].split(";")[0])
 
