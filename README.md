@@ -15,3 +15,14 @@
 - Tags       (languages he works in)
 - Badges     (Bronze:1 - Silver:2 - Gold:3)
 
+
+### Possible graphs
+
+Relationship between languages in repo - languages used by Repo followers - languages used by the user followers.
+
+% of starred users contributing to the repo. 
+
+User language tags - languages he works in in github.
+
+
+
