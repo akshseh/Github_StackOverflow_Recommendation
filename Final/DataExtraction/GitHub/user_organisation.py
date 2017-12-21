@@ -30,10 +30,11 @@ def write_to_out_file(out_data):
 		file_out.write('\n')
 
 #Fucntion for Extracting of Git-Hub Organisation-list for each User in Input
-def extract_user_info(user_link):
+def extract_user_info(user_link,github_id):
 	org_data = requests.get(user_link+'?client_id='+config.get('GitHub API keys', 'github_client_id')+'&client_secret=' + config.get('GitHub API keys', 'github_client_secret') +'&')
 	org_data_json = json.loads(org_data.text or org_data.content)
 	org_of_users_json = {
+			'github_id' : github_id,
 		 	'organizations_url' : []
 		}
 	for i in org_data_json:
@@ -46,4 +47,4 @@ with open(input_file, 'rb') as file_input:
 	file_read = csv.reader(file_input)
 	for row in file_read:
 		org_url ='https://api.github.com/user/'+row[0].split(";")[0]+'/orgs'
-		extract_user_info(org_url)
+		extract_user_info(org_url,row[0].split(";")[0])

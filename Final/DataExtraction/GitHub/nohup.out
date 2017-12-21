@@ -11443,4 +11443,36 @@ abscondment
 Features: {'XML': 1, 'C': 2, 'Shell': 5, 'Java': 3, 'Emacs Lisp': 1, 'JavaScript': 3, 'Perl': 2, 'HTML': 1, 'Mirah': 2, 'Clojure': 5, 'Ruby': 14}
 brendanlim
 2449
-Features: {'C': 1, 'Shell': 1, 'Objective-
+Features: {'C': 1, 'Shell': 1, 'Objective-Started Reading
+Traceback (most recent call last):
+  File "user_organisation.py", line 49, in <module>
+    extract_user_info(org_url)
+  File "user_organisation.py", line 34, in extract_user_info
+    org_data = requests.get(user_link+'?client_id='+config.get('GitHub API keys', 'github_client_id')+'&client_secret=' + config.get('GitHub API keys', 'github_client_secret') +'&')
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/usr/local/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+  File "/usr/lib/python2.7/httplib.py", line 1136, in getresponse
+    response.begin()
+  File "/usr/lib/python2.7/httplib.py", line 453, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python2.7/httplib.py", line 409, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/usr/lib/python2.7/socket.py", line 480, in readline
+    data = self._sock.recv(self._rbufsize)
+  File "/usr/local/lib/python2.7/dist-packages/urllib3/contrib/pyopenssl.py", line 258, in recv
+    data = self.connection.recv(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/OpenSSL/SSL.py", line 1319, in recv
+    result = _lib.SSL_read(self._ssl, buf, bufsiz)
+KeyboardInterrupt
