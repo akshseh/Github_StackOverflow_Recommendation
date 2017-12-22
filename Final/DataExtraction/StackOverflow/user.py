@@ -5,7 +5,7 @@ Created on Thu Dec 21 17:55:42 2017
 @author: karan
 """
 import xml.etree.ElementTree as ET
-import csv
+import csv,sys
 
 def csv_dict_reader(file_obj): #reading the stackIDs
     """
@@ -14,21 +14,16 @@ def csv_dict_reader(file_obj): #reading the stackIDs
     lst=[]
     reader = csv.reader(file_obj)
     for line in reader:
-        
-            
         a=line[0].split(';')
         lst.append(a[1])
        
     return lst  
 
-def write_csv(csvfl,repo_dic): #writing the csv file
-     with open(csvfl, 'w', newline='') as csvfile:
+def write_csv(csvfl,user,repo): #writing the csv file
+     with open(csvfl, 'a', newline='') as csvfile:
         fieldnames = ['StackID', 'Reputation']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-        writer.writeheader()
-        for user in repo_dic:
-            writer.writerow({'StackID': user, 'Reputation':repo_dic[user]})
+        writer.writerow({'StackID': user, 'Reputation':repo})
 
 
 
@@ -42,7 +37,7 @@ def parse_post(row):  #parsing each row
     
 
 
-def parse_posts(posts_path,dic):
+def parse_posts(csvfl,posts_path,dic):
     """
     Parameters: path to Posts.xml
     Output: written to parsed_data.txt
@@ -55,12 +50,16 @@ def parse_posts(posts_path,dic):
     
     for line in posts_file:
             try:
+                
                 root = ET.fromstring(line)
                 user,repo = parse_post(root)
             
                 if user in dic: #for users common to github and stackoverflow
                     if user not in repodic: 
-                        repodic[user]=repo 
+                        print(user,repo)
+                        repodic[user]=repo
+                        write_csv(csvfl,user,repo)
+                        
                 
                                 
             except :
@@ -73,8 +72,12 @@ def parse_posts(posts_path,dic):
 
 
 if __name__ == "__main__":
-    with open("githubID-stackID_25000.csv") as f_obj: 
+    with open(sys.argv[1]) as f_obj: 
         uids=csv_dict_reader(f_obj)
         
-    repodic=parse_posts("Users.xml",uids)
-    write_csv("top_tags.csv",repodic)
+    repodic=parse_posts(sys.argv[2],"Users.xml",uids)
+    for user in uids:
+        if user not in repodic:
+            print("*"+str(user))
+            write_csv(sys.argv[2],user,0)
+    
