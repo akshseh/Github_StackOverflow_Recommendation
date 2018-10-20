@@ -26,3 +26,10 @@ or % similarity between user languages and repo languages.
 - User language tags - languages he works in in github.
 
 - Badges + score - repos user contributed to
+
+
+## Contributors
+
+- Akarsha Sehwag [@aksh98](https://github.com/aksh98)
+- Hridoy Dutta [@hridaydutta123](https://github.com/hridaydutta123/)
+- Raunak Sinha [@Sinha-Raunak](https://github.com/Sinha-Raunak)
